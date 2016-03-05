@@ -1,56 +1,41 @@
 section#portfolio.grid
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="1s" /
-    img alt="01_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Freedom
-      p Nobody can give you freedom. Nobody can give you equality or justice or anything. If you re a man, you take it.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="http://www.youtube.com/watch?v=aZpV2Cor0rE" href="http://www.youtube.com/watch?v=aZpV2Cor0rE" title=("Freedom Project #1")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="2s"
+  - @categories.each do |c|  
+      figure.effect-portfolio.wow.fadeIn data-wow-duration="1s" 
+        img alt="img" src="#{c.photo}" /
+        figcaption
+          h2 = c.name.titleize
+          p = truncate(c.description, length: 100)
+          a.portfolio-link data-toggle="modal" href="#portfolioModal#{c.id}"  Ver Mas
 
-    img alt="02_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Bridging
-      p Sometimes you have to, as I say, build bridges where you can - but draw lines where you must.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/02.jpg" href="img/portfolio/02.jpg" title=("Bridging Project #2")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="3s"
-    img alt="03_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Needs
-      p Earth provides enough to satisfy every man's needs, but not every man's greed.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/03.jpg" href="img/portfolio/03.jpg" title=("Needs Project #3")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="4s"
-    img alt="04_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Paris
-      p Paris is the only city in the world where starving to death is still considered an art.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/04.jpg" href="img/portfolio/04.jpg" title=("Paris Project #4")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="5s"
-    img alt="05_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Mountains
-      p Look deep into nature, and then you will understand everything better.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/05.jpg" href="img/portfolio/05.jpg" title=("Mountains Project #5")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="6s"
-    img alt="06_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Techno
-      p What new technology does is create new opportunities to do a job that customers want done.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/06.jpg" href="img/portfolio/06.jpg" title=("Techno Project #6")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="1s"
-    img alt="07_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Taxi
-      p I m a terrible singer, but it helps when I have to call a taxi.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/07.jpg" href="img/portfolio/07.jpg" title=("Taxi Project #7")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="2s"
-    img alt="08_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Getaway
-      p He who does not get fun and enjoyment out of every day, needs to reorganize his life.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/08.jpg" href="img/portfolio/08.jpg" title=("Getaway Project #8")
-  figure.effect-portfolio.wow.fadeIn data-wow-duration="3s"
-    img alt="09_img" src="http://placehold.it/400x400" /
-    figcaption
-      h2 Signboard
-      p There is only one way to happiness and that is to cease worrying about things which are beyond the power of our will.
-      a data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/portfolio/09.jpg" href="img/portfolio/09.jpg" title=("Signboard Project #9")
+- @categories.each do |c|
+    .portfolio-modal.modal.fade id="portfolioModal#{c.id}" aria-hidden="true" role="dialog" tabindex="-1" 
+      .modal-content
+        .close-modal data-dismiss="modal" 
+          .lr
+            .rl
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .modal-body
+                h2 = c.name.titleize
+                #slider.carousel.slide data-ride="carousel" 
+                  .carousel-inner
+                    - c.images.each do |i|
+                      - if i == c.images.first
+                          .item.active
+                            img alt="..." src="#{i.url}" 
+                      - else
+                          .item
+                            img alt="..." src="#{i.url}" 
+                  a.left.carousel-control data-slide="prev" href="#slider" role="button" 
+                    span.fa.fa-caret-left.fa-2x
+                  a.right.carousel-control data-slide="next" href="#slider" role="button" 
+                    span.fa.fa-caret-right.fa-2x
+                p = c.description
+                ul.list-inline
+                  li = "Fecha: #{c.created_at}" 
+                  li = "Cliente: #{c.client.titleize}"
+                  li = "Categoria #{c.name}"
+                button.btn.btn-primary data-dismiss="modal" type="button" 
+                  i.fa.fa-times
+                  |  Cerrar Proyecto
