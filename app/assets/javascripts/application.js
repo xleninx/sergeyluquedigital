@@ -10,7 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery-1.11.0.js
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= modernizr.custom.js
+//= require skrollr
+//= require nivo-lightbox.min.js
+//= require imagesloaded.js
+//= require parallax.js
+//= require wow.min.js
+//= require SmoothScroll.js
+//= require jquery.easing.min.js
+//= require cbpAnimatedHeader.js
+//= require classie.js
+//= require jqBootstrapValidation.js
+//= require main.js

@@ -1,0 +1,30 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    title Sergey Luque Digital Fotografia
+    meta content="Asombroso Photography/Portfolio Template is built with Bootstrap Framework and 100% mobile responsive." name="description"
+    meta content="(portfolio template), photography template, creative, bootstrap, html5/css5" name="keywords"
+    meta content="Sergey Luque" name="author"
+    meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    = javascript_include_tag 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'
+    = javascript_include_tag 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js'
+
+    / link href="img/favicon.ico" rel=("shortcut icon") type="image/x-icon"
+    / link href="img/apple-touch-icon.png" rel="apple-touch-icon"
+    / link href="img/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"
+    / link href="img/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"
+    / 
+  body
+    = yield
+    
+    = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    / javascript:
+    /   $('#portfolio a').nivoLightbox({
+    /     effect: 'fall',
+    /   });

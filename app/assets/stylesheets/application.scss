@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ //= require style.css
+ //= require animate.css
+ //= require responsiveness.css
+ //= require nivo-lightbox.css
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
