@@ -1,4 +1,12 @@
 es:
+  activerecord:
+    models:
+      category:
+        one: Categoria
+        other: Categorias
+      image:
+        one: Imagen
+        other: Imagenes
   time:
    formats:
      default: "%d/%m/%Y"
