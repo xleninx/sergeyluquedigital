@@ -15,12 +15,12 @@ section#portfolio.grid
             .rl
         .container
           .row
-            .col-lg-8.col-lg-offset-2
+            .col-sm-12
               .modal-body
-                h2 = c.name.titleize
-                .fotorama.center-div data-allowfullscreen="true"
+                h2 = c.name.titleize 
+                .fotorama.center-div data-allowfullscreen="true" data-ratio="16/9"
                   - c.images.each do |i|
-                      img.img-responsive alt="..." src="#{i.url}" 
+                      img alt="..." src="#{i.url}" 
                 / #slider.carousel.slide data-ride="carousel" 
                 /   .carousel-inner
                 /     - c.images.each do |i|
