@@ -17,10 +17,11 @@ section#portfolio.grid
           .row
             .col-sm-12
               .modal-body
-                h2 = c.name.titleize 
-                .fotorama.center-div data-allowfullscreen="true" data-ratio="16/9"
-                  - c.images.each do |i|
-                      img alt="..." src="#{i.url}" 
+                h2 = c.name.titleize
+                #outer
+                  #inner.fotorama.center-div data-allowfullscreen="true" data-ratio="16/9"
+                    - c.images.each do |i|
+                        img alt="..." src="#{i.url}" 
                 / #slider.carousel.slide data-ride="carousel" 
                 /   .carousel-inner
                 /     - c.images.each do |i|

@@ -24,3 +24,14 @@
 .center-div{
   margin: auto;
 }
+
+#outer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#inner{
+    width:100%;
+}
