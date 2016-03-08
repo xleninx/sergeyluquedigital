@@ -18,9 +18,9 @@ section#portfolio.grid
             .col-lg-8.col-lg-offset-2
               .modal-body
                 h2 = c.name.titleize
-                .fotorama
+                .fotorama.center-div data-allowfullscreen="true"
                   - c.images.each do |i|
-                      img alt="..." src="#{i.url}" 
+                      img.img-responsive alt="..." src="#{i.url}" 
                 / #slider.carousel.slide data-ride="carousel" 
                 /   .carousel-inner
                 /     - c.images.each do |i|
