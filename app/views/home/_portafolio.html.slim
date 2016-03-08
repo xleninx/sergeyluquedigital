@@ -18,15 +18,18 @@ section#portfolio.grid
             .col-lg-8.col-lg-offset-2
               .modal-body
                 h2 = c.name.titleize
-                #slider.carousel.slide data-ride="carousel" 
-                  .carousel-inner
-                    - c.images.each do |i|
-                      - if i == c.images.first
-                          .item.active
-                            img alt="..." src="#{i.url}" 
-                      - else
-                          .item
-                            img alt="..." src="#{i.url}" 
+                .fotorama
+                  - c.images.each do |i|
+                      img alt="..." src="#{i.url}" 
+                / #slider.carousel.slide data-ride="carousel" 
+                /   .carousel-inner
+                /     - c.images.each do |i|
+                /       - if i == c.images.first
+                /           .item.active
+                /             img alt="..." src="#{i.url}" 
+                /       - else
+                /           .item
+                /             img alt="..." src="#{i.url}" 
                   a.left.carousel-control data-slide="prev" href="#slider" role="button" 
                     span.fa.fa-caret-left.fa-2x
                   a.right.carousel-control data-slide="next" href="#slider" role="button" 
