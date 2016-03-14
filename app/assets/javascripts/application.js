@@ -25,4 +25,5 @@
 //= require cbpAnimatedHeader.js
 //= require classie.js
 //= require jqBootstrapValidation.js
+//= require jquery.lazy.min.js
 //= require main.js

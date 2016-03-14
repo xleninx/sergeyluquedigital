@@ -23,6 +23,7 @@ function main() {
       $("#show").click(function(){
         $("#contact").slideToggle("slow,swing");
       });
+      $('.lazy').Lazy();
     });
 
     // Wow animation
