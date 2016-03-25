@@ -62,5 +62,7 @@
 @media (max-width: 768px) {
   #about h2, #about-parallax h2{
     font-size: 2em !important;
+    position: relative !important;
+    margin-bottom: -60px;
   }
 }
