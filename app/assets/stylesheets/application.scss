@@ -16,10 +16,33 @@
  //= require animate.css
  //= require responsiveness.css
  //= require nivo-lightbox.css
+
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.without-padding {
+  padding-left: 0;
+}
+
+#about-parallax .about-content{
+  padding-top: 5% !important;
+}
+@media (min-width: 768px){
+  .navbar-default{
+    background-color: rgba(0, 0, 0, 0.76) !important;
+  }
+}
+
+
+// #about h2, #about-parallax h2{
+//   border: 2px solid black !important;
+// }
+//
+// #about-parallax .bcg{
+//   color: black !important;
+// }
 
 .center-div{
   margin: auto;
@@ -34,4 +57,10 @@
 }
 #inner{
     width:100%;
+}
+
+@media (max-width: 768px) {
+  #about h2, #about-parallax h2{
+    left: 17%;
+  }
 }

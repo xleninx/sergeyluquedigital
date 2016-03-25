@@ -52,9 +52,6 @@ function main() {
           offset: 75
       });
 
-
-
-
 }());
 
 }
