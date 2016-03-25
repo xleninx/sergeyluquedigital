@@ -23,7 +23,13 @@ function main() {
       $("#show").click(function(){
         $("#contact").slideToggle("slow,swing");
       });
+
       $('.lazy').Lazy();
+
+      $('.nav a').on('click', function(){
+        $('.btn-navbar').click(); //bootstrap 2.x
+        $('.navbar-toggle').click() //bootstrap 3.x by Richard
+      });
     });
 
     // Wow animation
