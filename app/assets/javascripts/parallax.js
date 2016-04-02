@@ -32,7 +32,7 @@
 
           // Keep minimum height 550
           if(winH <= 450) {
-          winH = "auto";
+          winH = 600;
         }
 
           // Resize our slides
