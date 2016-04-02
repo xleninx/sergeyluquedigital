@@ -35,6 +35,15 @@
   }
 }
 
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .homeSlide{
+    height: 600px !important;
+  }
+}
+
 
 // #about h2, #about-parallax h2{
 //   border: 2px solid black !important;
