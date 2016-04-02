@@ -20,7 +20,7 @@ section#portfolio.grid
                 h2 = c.name.titleize
                 #outer
                   #inner.fotorama.center-div data-allowfullscreen="true" data-ratio="16/9"
-                    - c.images.each do |i|
+                    - c.images.order(created_at: :desc).each do |i|
                         img.lazy data-src="#{i.url}"
 
                 p = c.description
